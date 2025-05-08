@@ -1,0 +1,46 @@
+#matches {
+  background-color: white;
+}
+
+#matches h1 {
+  color: black;
+  font-size: 80px;
+  text-align: center;
+  margin-bottom: 110px;
+  margin-top: 60px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+  padding: 50px;
+  border: 3px solid black;
+  border-radius: 10px;
+  margin: 40px 80px;
+}
+
+.team {
+  flex-direction: column;
+  text-align: center;
+  font-size: 50px;
+  color: black;
+}
+
+.team img {
+  width: min(180px, 25vw);
+  border-radius: 45%;
+}
+
+.match-marker {
+  font-size: 50px;
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .cards {
+    flex-direction: column;
+    margin: 30px 20px;
+  }
+}
