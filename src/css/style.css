@@ -147,8 +147,8 @@
 }
 
 .botao__inscrever:hover {
-  color: rgb(176, 176, 176);
-  background-color: rgb(62, 12, 81);;
+  color: rgb(255, 255, 255);
+  background-color: rgb(205, 6, 255);;
 }
 
 .pagina__secundaria {
@@ -245,7 +245,7 @@ footer {
 
   /* @media screen and (max-width: 768px) */
   /* @media (max-width: 1250px) */
- @media (max-width: 768px) {
+@media screen and (max-width: 1038px) {
     .background__site {
       display: block;
       background-image: none;
