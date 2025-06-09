@@ -99,10 +99,6 @@
     
 .background__site{
     position: relative;
-    background-image: url(/src/imgs/assets/background.webp);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -110,17 +106,17 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
 }
 
-.background__site::before {
-    content: "";
+.video_fundo {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* preto com 30% de transparência */
-    z-index: 1;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .conteudo__titulo{
