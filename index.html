@@ -5,16 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Copa Passa a Bola</title>
+  <script src="/src/js/app.js" defer></script>
   <link rel="stylesheet" href="/src/css/style.css">
   <link rel="stylesheet icon" href="/src/assets/imgs/Logotipo-PassaBola-TudoPreto.png">
   <meta name="keywords"
     content="copa, Copa passa a bola, Passa a bola, inscricao, inscricao campeonato, futebol, futebol feminino, copa futebol feminino">
   <meta name="description" content="site de inscricao para copa passa a bola" />
+  <!-- BOOTSTRAP ICONES -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <!-- FIM BOOTSTRAP ICONES -->
 
 </head>
 
 <body>
-  <header>
+  <header> <!--CABECALHO DESKTOP-->
     <div>
       <nav>
         <ul class="primeiro__nav">
@@ -33,14 +37,42 @@
 
     <img class="Logotipo" src="/src/assets/imgs/Logotipo-PassaBola-Branco.png" alt="Logotipo Passa a Bola" />
 
+  </header> <!--FIM CABECALHO DESKTOP-->
+
+  <!-- HEADER DO MOBILE -->
+  <header class="cabecalho__mobile">
+    <div class="btn__abrir__menu" id="btn__menu">
+      <i class="bi bi-list"></i>
+    </div>
+
+    <div class="container__mobile">
+      <img src="/src/assets/imgs/Logotipo-PassaBola-Branco.png" alt="Logotipo sem fundo" class="logotipo__mobile" />
+    </div>
   </header>
+
+  <!-- Menu fora do header -->
+  <div class="menu__mobile" id="menu__mobile">
+    <nav>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">JOGOS</a></li>
+        <li><a href="#">CONTATO</a></li>
+        <li><a href="src/pages/login.html">LOGIN</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="overlay__menu" id="overlay__menu"></div>
+  <!-- FIM HEADER DO MOBILE -->
+
+
   <main>
     <section class="pagina__principal">
       <div class="background__site">
         <video autoplay muted loop playsinline class="video_fundo">
           <source src="/src/assets/videos/Video_pagina_inicial.mp4" type="video/mp4">
         </video>
-        
+
 
         <h1 class="conteudo__titulo">
           COPA PASSA A BOLA <br> <span class="subtitulo">Faça História nos Gramados</span>

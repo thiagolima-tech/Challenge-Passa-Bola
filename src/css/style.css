@@ -15,6 +15,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Impede rolagem lateral */
+}
+
+
 header .Logotipo {
   position: absolute;
   top: 15px;
@@ -39,10 +45,11 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
-  padding: 40px;
+  padding: 40px 0; /* <-- Corrige aqui! */
   background-color: var(--cor-principal);
   align-items: center;
 }
+
 
 nav {
   display: flex;
@@ -104,6 +111,104 @@ nav ul .separador {
   margin: 0 25px;
   /* espaçamento lateral de 15px para todos os itens */
 }
+
+/* CABECALHO MOBILE */
+
+.cabecalho__mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cor-principal);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0; /* Mantém só top/bottom */
+}
+
+.btn__abrir__menu i {
+  padding-left: 20px;
+  font-size: 40px;
+  color: #fff;
+  z-index: 1000;
+}
+
+.logotipo__mobile {
+  padding-right: 20px;
+  width: 65px;
+  height: auto;
+  border-radius: 50%;
+}
+
+
+/* ESTILO MENU MOBILE */
+.menu__mobile {
+  background-color: var(--cor-principal);
+  width: 100vw;
+  max-height: 0;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  display: block;
+}
+
+.menu__mobile.abrir__menu {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.menu__mobile ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.menu__mobile li {
+  margin: 20px 0;
+}
+
+.menu__mobile a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--fonte-primaria);
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  padding-left: 0px;
+  z-index: 5;
+}
+
+.menu__mobile.abrir__menu ~ .overlay__menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay__menu {
+  background-color: #000000d1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 90px;
+  left: 0;
+  z-index: 888;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Ativar o overlay */
+.overlay__menu.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
 
 .background__site {
   position: relative;
@@ -276,4 +381,23 @@ footer {
 /* @media (max-width: 1250px) */
 @media screen and (max-width: 1038px) {
   /* HEADER */
+  header:not(.cabecalho__mobile) {
+    display: none;
+  }
+
+  .cabecalho__mobile {
+    display: flex;
+  }
+
+  .container {
+    width: 88%;
+    /* 100% - 6% dos dois lados = 88% */
+    margin: 0 auto;
+    /* centraliza */
+    padding: 0;
+  }
+
+  .overlay {
+    height: 600px;
+  }
 }
